@@ -2,7 +2,7 @@
 
 # get computer name in Python
 
-import colorama, os, sys, traceback
+import colorama, os, socket, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
@@ -39,8 +39,7 @@ def getComputerName():
 		startDateTime = datetime.now()
 		print("Started getting computer name at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
-		print(Fore.BLUE + "The computer name is: ")
-		os.system('hostname')
+		print(Fore.BLUE + "The computer name is: " + socket.gethostname())
 		print(Fore.GREEN + "Successfully got computer name." + Style.RESET_ALL)
 
 		finishedDateTime = datetime.now()
